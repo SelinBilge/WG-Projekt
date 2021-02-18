@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIF-B3-ZWZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIF-B3-ZWZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -37,7 +37,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButton:" destination="6ap-JY-30N" eventType="touchUpInside" id="Nea-oD-kFD"/>
-                                    <segue destination="wQp-b6-N3d" kind="show" identifier="AfterProfile" id="0yh-Gz-r3Z"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-nt-IR6">
@@ -45,28 +44,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="name:" destination="6ap-JY-30N" eventType="editingDidEnd" id="4k2-HD-T2Z"/>
-                                    <action selector="name:" destination="Ie1-Ml-xdy" eventType="editingDidEnd" id="SVy-gb-IkP"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1SX-xE-dJu">
                                 <rect key="frame" x="166.5" y="569" width="41" height="18.5"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="email:" destination="6ap-JY-30N" eventType="editingDidEnd" id="6QK-RX-vf9"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHA-fi-ne0">
                                 <rect key="frame" x="167.5" y="639.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="password:" destination="6ap-JY-30N" eventType="editingDidEnd" id="1D7-yy-5G7"/>
-                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_white" translatesAutoresizingMaskIntoConstraints="NO" id="ch0-fN-nLD">
                                 <rect key="frame" x="95.5" y="483" width="63" height="50"/>
@@ -112,9 +101,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="qAe-ra-Wsx"/>
                     <connections>
-                        <outlet property="emailText" destination="1SX-xE-dJu" id="LWo-r1-JbA"/>
-                        <outlet property="nameText" destination="zqj-nt-IR6" id="Pyx-Ez-8Sa"/>
-                        <outlet property="passwordText" destination="jHA-fi-ne0" id="bJ5-bo-5bQ"/>
+                        <outlet property="emailText" destination="1SX-xE-dJu" id="XjW-l8-1tK"/>
+                        <outlet property="nameText" destination="zqj-nt-IR6" id="Hex-q8-nVL"/>
+                        <outlet property="passwordText" destination="jHA-fi-ne0" id="hwX-HZ-9Yh"/>
+                        <segue destination="wQp-b6-N3d" kind="show" identifier="AfterProfile" id="0yf-dg-MmQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zw-Et-7HD" sceneMemberID="firstResponder"/>
@@ -137,7 +127,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9i-06-m7k">
-                                <rect key="frame" x="100" y="563" width="214" height="30"/>
+                                <rect key="frame" x="100" y="473" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,17 +136,8 @@
                                     <action selector="nextButton:" destination="wQp-b6-N3d" eventType="touchUpInside" id="xsq-7P-dma"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wic-aI-L7T">
-                                <rect key="frame" x="176.5" y="389" width="41" height="18.5"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="emailcheck:" destination="wQp-b6-N3d" eventType="editingDidEnd" id="kXP-xA-dwa"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xvF-lm-bW6">
-                                <rect key="frame" x="177.5" y="459.5" width="59.5" height="17"/>
+                                <rect key="frame" x="177.5" y="389.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -165,9 +146,6 @@
                                 </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock_white" translatesAutoresizingMaskIntoConstraints="NO" id="EwP-hn-Aue">
-                                <rect key="frame" x="95" y="443" width="64" height="50"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_white" translatesAutoresizingMaskIntoConstraints="NO" id="f74-3Y-T3b">
                                 <rect key="frame" x="95" y="373" width="64" height="50"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="WG-Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xip-7M-ofB">
@@ -186,23 +164,19 @@
                         <viewLayoutGuide key="safeArea" id="TmJ-f5-v8g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wic-aI-L7T" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="-50" id="7u4-X3-YgM"/>
-                            <constraint firstItem="f74-3Y-T3b" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="-50" id="8yl-G4-UNH"/>
                             <constraint firstItem="EwP-hn-Aue" firstAttribute="centerX" secondItem="kxY-Gy-7rD" secondAttribute="centerX" constant="-80" id="HDW-Sm-sb7"/>
-                            <constraint firstItem="EwP-hn-Aue" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="20" id="KOk-Kd-MdE"/>
-                            <constraint firstItem="f74-3Y-T3b" firstAttribute="centerX" secondItem="kxY-Gy-7rD" secondAttribute="centerX" constant="-80" id="MPK-Tt-NR9"/>
+                            <constraint firstItem="EwP-hn-Aue" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="-50" id="KOk-Kd-MdE"/>
                             <constraint firstItem="9fL-IE-210" firstAttribute="centerX" secondItem="kxY-Gy-7rD" secondAttribute="centerX" constant="-80" id="Qvh-AD-Kcq"/>
                             <constraint firstItem="9fL-IE-210" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="-120" id="TIl-KS-Nyu"/>
                             <constraint firstItem="I9i-06-m7k" firstAttribute="centerX" secondItem="kxY-Gy-7rD" secondAttribute="centerX" id="URC-7g-5gX"/>
                             <constraint firstItem="I9i-06-m7k" firstAttribute="leading" secondItem="TmJ-f5-v8g" secondAttribute="leading" constant="100" id="a3w-BU-2Z5"/>
-                            <constraint firstItem="I9i-06-m7k" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="130" id="bHo-0M-OqN"/>
+                            <constraint firstItem="I9i-06-m7k" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="40" id="bHo-0M-OqN"/>
                             <constraint firstItem="39U-5w-VKw" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="-290" id="huC-UR-lCI"/>
                             <constraint firstItem="39U-5w-VKw" firstAttribute="centerX" secondItem="kxY-Gy-7rD" secondAttribute="centerX" id="j9l-1n-IgV"/>
                             <constraint firstItem="xip-7M-ofB" firstAttribute="centerX" secondItem="kxY-Gy-7rD" secondAttribute="centerX" id="tWl-ZT-SHc"/>
-                            <constraint firstItem="wic-aI-L7T" firstAttribute="centerX" secondItem="kxY-Gy-7rD" secondAttribute="centerX" constant="-10" id="ugq-ea-qkl"/>
                             <constraint firstItem="xvF-lm-bW6" firstAttribute="centerX" secondItem="kxY-Gy-7rD" secondAttribute="centerX" id="vws-AQ-fbB"/>
                             <constraint firstItem="xip-7M-ofB" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="-120" id="y7S-cZ-mpb"/>
-                            <constraint firstItem="xvF-lm-bW6" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="20" id="zVi-L9-RhU"/>
+                            <constraint firstItem="xvF-lm-bW6" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="-50" id="zVi-L9-RhU"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
@@ -215,7 +189,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="YLN-x1-Dri"/>
                     <connections>
-                        <outlet property="emailtext" destination="wic-aI-L7T" id="WI3-h6-UKH"/>
                         <outlet property="nameofWg" destination="xip-7M-ofB" id="X4Z-VR-YuM"/>
                         <outlet property="passworttext" destination="xvF-lm-bW6" id="Qqy-QX-heV"/>
                         <segue destination="if0-gs-GIH" kind="show" identifier="shareWG" id="xPt-X3-rYD"/>
@@ -352,7 +325,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButton:" destination="if0-gs-GIH" eventType="touchUpInside" id="MER-rI-foo"/>
-                                    <segue destination="2EZ-Qn-cjM" kind="show" identifier="logIntoWG" id="il2-dU-fnr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -386,16 +358,17 @@
                     <connections>
                         <outlet property="displayCode" destination="7Ki-YQ-iW1" id="vU8-Sb-ZDn"/>
                         <outlet property="shareButton" destination="dwr-4i-dlh" id="6wQ-9G-mNi"/>
+                        <segue destination="2EZ-Qn-cjM" kind="show" identifier="logIntoWG" id="LQj-mY-Cse"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rf-ZI-QvF" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4508.695652173913" y="862.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Join ExsistingWG-->
         <scene sceneID="WpD-Bh-ThG">
             <objects>
-                <viewController id="Bzx-ZR-FHv" customClass="ViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bzx-ZR-FHv" customClass="JoinExsistingWG" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DdR-sk-70V" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -413,9 +386,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButton:" destination="3AN-z2-spf" eventType="touchUpInside" id="esB-nw-ue8"/>
-                                    <action selector="nextClicked:" destination="Bzx-ZR-FHv" eventType="touchUpInside" id="i6w-bT-NcH"/>
-                                    <segue destination="THM-Na-Y9k" kind="presentation" modalPresentationStyle="fullScreen" id="sMM-5Z-Own"/>
+                                    <action selector="nextButton:" destination="Bzx-ZR-FHv" eventType="touchUpInside" id="b65-Vd-t2W"/>
+                                    <segue destination="THM-Na-Y9k" kind="presentation" identifier="Home" modalPresentationStyle="fullScreen" id="sMM-5Z-Own"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJ2-qn-J1y">
@@ -466,13 +438,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="ah7-gn-iyw"/>
                     <connections>
-                        <outlet property="nextButton" destination="hlP-xh-hHj" id="oed-u4-RG9"/>
-                        <outlet property="wgName" destination="Wzu-Ag-yXt" id="UYl-Ms-EZU"/>
-                        <outlet property="wgpasswort" destination="SJ2-qn-J1y" id="6UT-na-xNl"/>
+                        <outlet property="wgNametext" destination="Wzu-Ag-yXt" id="6ud-vU-8pc"/>
+                        <outlet property="wgPasswordText" destination="SJ2-qn-J1y" id="BLV-Pu-fdi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LJ-tW-feS" sceneMemberID="firstResponder"/>
-                <exit id="3AN-z2-spf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3664" y="1665"/>
         </scene>
@@ -1752,8 +1722,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButton:" destination="sXS-Py-830" eventType="touchUpInside" id="dtB-EB-hSh"/>
-                                    <segue destination="Bzx-ZR-FHv" kind="show" identifier="JoinWG" id="mM9-tY-Oyp"/>
+                                    <action selector="Button:" destination="sXS-Py-830" eventType="touchUpInside" id="MC4-ns-xJc"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qoD-NG-kye">
@@ -1770,9 +1739,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="email:" destination="sXS-Py-830" eventType="editingDidEnd" id="cb0-MS-Rwg"/>
-                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_white" translatesAutoresizingMaskIntoConstraints="NO" id="mDD-cm-60c">
                                 <rect key="frame" x="95" y="303" width="64" height="50"/>
@@ -1806,18 +1772,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="ql4-dm-FTn"/>
                     <connections>
-                        <outlet property="emailText" destination="czI-Lb-siY" id="b0h-38-O62"/>
+                        <outlet property="emailText" destination="czI-Lb-siY" id="Bwj-ND-hqY"/>
                         <outlet property="passwordText" destination="qoD-NG-kye" id="Nw2-26-a7K"/>
+                        <segue destination="Bzx-ZR-FHv" kind="show" identifier="joinWG" id="Atu-8h-IKM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoF-bc-7V5" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2862" y="1665"/>
         </scene>
-        <!--Profile Screen-->
+        <!--Register-->
         <scene sceneID="cv1-bO-oeJ">
             <objects>
-                <viewController id="amJ-rB-gkt" customClass="ProfileScreen" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="amJ-rB-gkt" customClass="Register" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VT8-vf-47j" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1838,8 +1805,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButton:" destination="amJ-rB-gkt" eventType="touchUpInside" id="exe-4c-K6H"/>
-                                    <segue destination="Bzx-ZR-FHv" kind="show" id="FN5-1z-DRU"/>
+                                    <action selector="Button:" destination="amJ-rB-gkt" eventType="touchUpInside" id="GfM-Wc-0RL"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ob-Q5-bSy">
@@ -1850,7 +1816,6 @@
                                 <connections>
                                     <action selector="name:" destination="Ie1-Ml-xdy" eventType="editingDidEnd" id="Jk3-BF-afE"/>
                                     <action selector="name:" destination="wf4-sa-YUd" eventType="editingDidEnd" id="RJr-C8-Mrl"/>
-                                    <action selector="name:" destination="amJ-rB-gkt" eventType="editingDidEnd" id="ofL-JP-uZK"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-Mx-mZc">
@@ -1858,18 +1823,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="email:" destination="amJ-rB-gkt" eventType="editingDidEnd" id="abw-T2-YtW"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="75m-It-Vfd">
                                 <rect key="frame" x="167.5" y="639.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="password:" destination="amJ-rB-gkt" eventType="editingDidEnd" id="ChO-jf-LrI"/>
-                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_white" translatesAutoresizingMaskIntoConstraints="NO" id="pO7-86-4eA">
                                 <rect key="frame" x="95.5" y="483" width="63" height="50"/>
@@ -1915,9 +1874,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="P4d-cR-qkX"/>
                     <connections>
-                        <outlet property="emailText" destination="GgK-Mx-mZc" id="WaM-l9-m1w"/>
-                        <outlet property="nameText" destination="6ob-Q5-bSy" id="FHt-wz-Kqf"/>
-                        <outlet property="passwordText" destination="75m-It-Vfd" id="g7N-J7-c83"/>
+                        <outlet property="Button" destination="hAN-5A-aXS" id="pCP-Mi-8PU"/>
+                        <outlet property="emailText" destination="GgK-Mx-mZc" id="kIE-PD-Iw3"/>
+                        <outlet property="nameText" destination="6ob-Q5-bSy" id="ZqO-Pd-zGi"/>
+                        <outlet property="passwortText" destination="75m-It-Vfd" id="cYY-M9-2XK"/>
+                        <segue destination="Bzx-ZR-FHv" kind="show" identifier="joinWG" id="D2J-ks-4Cg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUR-A9-S1C" sceneMemberID="firstResponder"/>
@@ -1927,8 +1888,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Xhc-o0-kHc"/>
-        <segue reference="FN5-1z-DRU"/>
+        <segue reference="sMM-5Z-Own"/>
+        <segue reference="Atu-8h-IKM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>

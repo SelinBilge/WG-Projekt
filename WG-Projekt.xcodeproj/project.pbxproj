@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		98AA3300C1F6FFA28AEF85A9 /* Pods_WG_Projekt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0500734B57AFF307D297E381 /* Pods_WG_Projekt.framework */; };
 		D109113A25D7F30F00963A89 /* LogInCreateWG.swift in Sources */ = {isa = PBXBuildFile; fileRef = D109113925D7F30F00963A89 /* LogInCreateWG.swift */; };
+		D154877325DD934E007391EC /* Singelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D154877225DD934E007391EC /* Singelton.swift */; };
 		D15BA20C25DA90A700752FA4 /* LogInWG.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BA20B25DA90A700752FA4 /* LogInWG.swift */; };
+		D164A69125DD4F0800C6AECB /* JoinExsistingWG.swift in Sources */ = {isa = PBXBuildFile; fileRef = D164A69025DD4F0800C6AECB /* JoinExsistingWG.swift */; };
+		D164A69425DD5A3B00C6AECB /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D164A69325DD5A3B00C6AECB /* Register.swift */; };
 		D1B9540125D4025A00605EFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9540025D4025A00605EFD /* AppDelegate.swift */; };
 		D1B9540325D4025A00605EFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9540225D4025A00605EFD /* SceneDelegate.swift */; };
 		D1B9540525D4025A00605EFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9540425D4025A00605EFD /* ViewController.swift */; };
@@ -45,9 +48,12 @@
 		6BB64B01889918BD030D9C01 /* Pods-WG-Projekt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WG-Projekt.release.xcconfig"; path = "Target Support Files/Pods-WG-Projekt/Pods-WG-Projekt.release.xcconfig"; sourceTree = "<group>"; };
 		C69AA8CC3E9C242804787B8A /* Pods-WG-Projekt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WG-Projekt.debug.xcconfig"; path = "Target Support Files/Pods-WG-Projekt/Pods-WG-Projekt.debug.xcconfig"; sourceTree = "<group>"; };
 		D109113925D7F30F00963A89 /* LogInCreateWG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCreateWG.swift; sourceTree = "<group>"; };
+		D154877225DD934E007391EC /* Singelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singelton.swift; sourceTree = "<group>"; };
 		D15BA1E725D7F77100752FA4 /* CreateWG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWG.swift; sourceTree = "<group>"; };
 		D15BA1EA25D80CAE00752FA4 /* inviteToWg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inviteToWg.swift; sourceTree = "<group>"; };
 		D15BA20B25DA90A700752FA4 /* LogInWG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInWG.swift; sourceTree = "<group>"; };
+		D164A69025DD4F0800C6AECB /* JoinExsistingWG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinExsistingWG.swift; sourceTree = "<group>"; };
+		D164A69325DD5A3B00C6AECB /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		D18D201225D6E7FB00C186CA /* LogInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreen.swift; sourceTree = "<group>"; };
 		D1B953FD25D4025A00605EFD /* WG-Projekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WG-Projekt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B9540025D4025A00605EFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				D109113925D7F30F00963A89 /* LogInCreateWG.swift */,
+				D164A69025DD4F0800C6AECB /* JoinExsistingWG.swift */,
+				D164A69325DD5A3B00C6AECB /* Register.swift */,
 			);
 			path = joinWG;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 				D1B9540425D4025A00605EFD /* ViewController.swift */,
 				D1B9540625D4025A00605EFD /* Main.storyboard */,
 				DA57536B25DA9C24003A880A /* ShoppingViewController.swift */,
+				D154877225DD934E007391EC /* Singelton.swift */,
 				DA57536525DA942F003A880A /* AddPollViewController.swift */,
 				DA57535A25DA8E63003A880A /* PollViewController.swift */,
 				DA57534125DA6443003A880A /* CalendarCell.swift */,
@@ -324,16 +333,19 @@
 				DA57536625DA942F003A880A /* AddPollViewController.swift in Sources */,
 				D1B9541825D4054000605EFD /* GradientView.swift in Sources */,
 				D1B9540325D4025A00605EFD /* SceneDelegate.swift in Sources */,
+				D164A69425DD5A3B00C6AECB /* Register.swift in Sources */,
 				DA57539B25DAB280003A880A /* LogInScreen.swift in Sources */,
 				DA57536325DA8F1B003A880A /* PollResultCell.swift in Sources */,
 				DA57536925DA9587003A880A /* PollOptionCell.swift in Sources */,
 				DA57536C25DA9C24003A880A /* ShoppingViewController.swift in Sources */,
+				D154877325DD934E007391EC /* Singelton.swift in Sources */,
 				DA01AC8B25D6A743007E0B39 /* CalendarViewController.swift in Sources */,
 				D109113A25D7F30F00963A89 /* LogInCreateWG.swift in Sources */,
 				DA01AC8825D6A710007E0B39 /* TodoCell.swift in Sources */,
 				DA57539D25DAB2B3003A880A /* inviteToWg.swift in Sources */,
 				DA01AC8125D6A660007E0B39 /* PersonTag.swift in Sources */,
 				DA57539F25DAB2B7003A880A /* CreateWG.swift in Sources */,
+				D164A69125DD4F0800C6AECB /* JoinExsistingWG.swift in Sources */,
 				DA01AC8F25D6A79F007E0B39 /* TodoViewController.swift in Sources */,
 				D1B9540B25D4025A00605EFD /* WG_Projekt.xcdatamodeld in Sources */,
 				D15BA20C25DA90A700752FA4 /* LogInWG.swift in Sources */,

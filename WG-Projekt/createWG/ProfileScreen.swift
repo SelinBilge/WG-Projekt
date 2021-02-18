@@ -19,18 +19,15 @@ extension String {
 }
 
 
-
 class ProfileScreen: UIViewController {
     
-@IBOutlet weak var nameText: UITextField!
-@IBOutlet weak var emailText: UITextField!
-@IBOutlet weak var passwordText: UITextField!
-    
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         // add an done button to the keyboard
         let toolbar = UIToolbar(frame: CGRect(x: 0, y:0, width: view.frame.size.width, height: 50))
@@ -49,7 +46,7 @@ class ProfileScreen: UIViewController {
         
     }
     
-    // close keyboard after clicking on done button
+        // close keyboard after clicking on done button
          @objc private func didTapDone(){
             nameText.resignFirstResponder()
             emailText.resignFirstResponder()
@@ -72,9 +69,7 @@ class ProfileScreen: UIViewController {
             
             // email is not valid
            if emailText.text!.isEmail == false {
-                
-                // SHOW TOAST MESSAGE
-                self.showToast(message: "Das ist keine Emailadresse", font: .systemFont(ofSize: 12.0))
+               self.showToast(message: "Das ist keine Emailadresse", font: .systemFont(ofSize: 12.0))
             }
         }
     }
@@ -104,43 +99,47 @@ class ProfileScreen: UIViewController {
                 FirebaseAuth.Auth.auth().createUser(withEmail: useremail, password: userpassword) { ( result, err)  in
                     
                     // check for errors
-                    if  err == nil {
-                     
+                    if err != nil {
                        self.showToast(message: "Error beim User erstellen", font: .systemFont(ofSize: 12.0))
+                        print(err)
                         
                     } else {
                         created = true
-                        print("User created account")
+                        print("ProfileScreen -> User created account")
+                        
+                        // save name in singelton
+                        let testUser = Singelton.sharedInstance.fetchdata()
+                        testUser.userName = self.nameText.text!
                     }
-                    
-                    
+                                        
                     if created == true {
                         
                         var  userID = Auth.auth().currentUser!.uid
-                        print("Test UserID: \(userID)")
+                        print("ProfileScreen -> Test UserID: \(userID)")
 
                         // save in firestore
                         let db = Firestore.firestore()
+                        
+                        // generate random Int number
+                        let randomWgKey = Int.random(in: 100000000...999999999)
 
+                        var key = String(randomWgKey)
+                        print("ProfileScreen -> Test randomKey: \(key)")
+
+                        
                         // add a document with specific id -> is the user id
-                        db.collection("users").document(userID).setData(["name": username, "wgname":"", "wgpasswort":""]) { (error) in
+                        db.collection("users").document(userID).setData(["name":username, "wgname": "", "wgpasswort": "", "wgkey":key]) { (error) in
                             
                             if let error = error {
                                 // error happened
                                 self.showToast(message: "Error beim speichern in der Datenbank", font: .systemFont(ofSize: 12.0))
                             } else {
-                                self.showToast(message: "!User erstellt!", font: .systemFont(ofSize: 12.0))
-                                print("Saved in Firestore")
+                                print("ProfileScreen -> Saved in Firestore")
                                 
                                 // go to next screen
                                 self.performSegue(withIdentifier: "AfterProfile", sender: nil)
                             }
-                            
                         }
-                        
-
-    
-                        
                         
                     }
                         
@@ -159,7 +158,6 @@ class ProfileScreen: UIViewController {
        }
 
 }
-
 
 
 

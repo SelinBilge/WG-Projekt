@@ -12,16 +12,34 @@ import Firebase
 
 class inviteToWg: UIViewController {
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var test = ""
+        
+        // read data from specific document ID
+        let db = Firestore.firestore()
+        let  userID = Auth.auth().currentUser!.uid
+        
+        db.collection("users").document(userID).getDocument { (document, error) in
+       
+            if error == nil {
+                // check if document exists
+                if document != nil && document!.exists {
+                                        
+                    let docData = document!.data()
+                    test = docData!["wgpasswort"] as? String ?? ""
+                    print("inviteToWG -> Test get code: \(test)")
+                }
+            }
+        }
+        
         // code text feld zeigt das passwort an
+        displayCode.text = test
+        
     }
     
     @IBOutlet weak var displayCode: UITextField!
-
-    
     @IBOutlet weak var shareButton: UIButton!
     
     @IBAction func Button(_ sender: Any) {
@@ -41,10 +59,10 @@ class inviteToWg: UIViewController {
                                         
                     let docData = document!.data()
                     wgname = docData!["wgname"] as? String ?? ""
-                    print("Test get code: \(wgname)")
+                    print("inviteToWG -> Test get code: \(wgname)")
                     
                     passw = docData!["wgpasswort"] as? String ?? ""
-                    print("Test get code: \(passw)")
+                    print("inviteToWG -> Test get code: \(passw)")
                     
                     // sharesheet with wg-name and the password for th wg
                     var message = "WG-Name: \(wgname) Passwort: \(passw)"
@@ -57,12 +75,9 @@ class inviteToWg: UIViewController {
                     )
                     shareSheetVC.popoverPresentationController?.sourceView = self.view
                     self.present(shareSheetVC, animated: true, completion: nil)
-                    
                 }
             }
         }
-        
-       
      
     }
     
@@ -73,24 +88,3 @@ class inviteToWg: UIViewController {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

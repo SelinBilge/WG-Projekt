@@ -8,10 +8,10 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class LogInScreen: UIViewController {
 
-    
     
     @IBOutlet weak var passwordText: UITextField!
     
@@ -45,6 +45,66 @@ class LogInScreen: UIViewController {
                 
             } else {
                 print("Login was successful")
+                
+                // get the wgkey for specific user
+                let db = Firestore.firestore()
+                let  userID = Auth.auth().currentUser!.uid
+                
+                var wgkey = ""
+                var name = ""
+                var users = [String]()
+
+                
+                // read data from specific document ID
+                db.collection("users").document(userID).getDocument { (document, error) in
+               
+                    if error == nil {
+                        // check if document exists
+                        if document != nil && document!.exists {
+                                                
+                            let docData = document!.data()
+                            wgkey = docData!["wgkey"] as? String ?? ""
+                            print("Test get wgkey: \(wgkey)")
+                            
+                            name = docData!["name"] as? String ?? ""
+                            print("Test get name: \(name)")
+                            
+                            // save name in singelton
+                            let testUser = Singelton.sharedInstance.fetchdata()
+                            testUser.userName = name
+                            
+                            
+                            // read data from specific document ID
+                            db.collection("wgs").document(wgkey).getDocument { (document, error) in
+                           
+                                if error == nil {
+                                    // check if document exists
+                                    if document != nil && document!.exists {
+                                                            
+                                        let docData = document!.data()
+                                        
+                                        
+                                        // STIMMT SO DER ZUGRIFF AUF DAS ARRAY????
+                                        // TESTEN MIT MEHREREN MITGLIEDERN
+                                        users = docData!["users"] as? [String] ?? []
+                                        print("Test get other users: \(users)")
+                                        
+                                        // save other wg members in singelton
+                                        let testUser = Singelton.sharedInstance.fetchdata()
+                                        
+                                        users.forEach { user in
+                                            testUser.members.append(user)
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+                          
+                // go to next screen
                 self.performSegue(withIdentifier: "Home", sender: nil)
             }
         }

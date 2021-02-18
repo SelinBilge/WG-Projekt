@@ -16,19 +16,8 @@
         @IBOutlet weak var passwordText: UITextField!
         
         
-        @IBAction func email(_ sender: Any) {
-            if emailText.text != ""{
-                
-                // email is not valid
-               if emailText.text!.isEmail == false {
-                    
-                    // SHOW TOAST MESSAGE
-                    self.showToast(message: "Das ist keine Emailadresse", font: .systemFont(ofSize: 12.0))
-                }
-            }
-        }
+        @IBAction func Button(_ sender: Any) {
         
-        @IBAction func nextButton(_ sender: Any) {
             let email = emailText.text!.trimmingCharacters(in: .newlines)
             let password = passwordText.text!.trimmingCharacters(in: .newlines)
         
@@ -44,13 +33,17 @@
                     
                 } else {
                     print("Login was successful")
-                    self.performSegue(withIdentifier: "JoinWG", sender: nil)
+                    self.performSegue(withIdentifier: "joinWG", sender: nil)
                 }
             }
                  
+            } else {
+                self.showToast(message: "Bitte fülle alle Felder aus", font: .systemFont(ofSize: 12.0))
             }
+        
         }
         
+       
         
         
     }
