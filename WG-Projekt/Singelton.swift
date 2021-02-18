@@ -19,7 +19,7 @@ class Singelton {
     
     func fetchdata() -> userObject{
         print("Username: \( sharedUser.userName)")
-       
+        print("Wgid: \( sharedUser.wgid)")
         for member in sharedUser.members {
             print("Collegues: \(member)")
         }
@@ -33,4 +33,5 @@ class Singelton {
 class userObject {
     var userName = ""
     var members = [String]()
+    var wgid = ""
 }
