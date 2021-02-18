@@ -43,6 +43,7 @@ class CalendarDetailViewController: UIViewController {
     @IBAction func createEvent(_ sender: Any) {
         //validation
         if(eventTitle.text == "" || eventDescription.text == "") {
+            self.showToast(message: "Titel und Beschreibung eingeben", font: .systemFont(ofSize: 12.0))
             return
         }
         //Get variables

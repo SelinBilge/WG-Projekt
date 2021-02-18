@@ -18,6 +18,7 @@ struct Section{
 //One Totdo Object
 struct Todo: Codable{
     let title: String
+    let description: String
     var done: Bool
     var person: String
     var due: Date
@@ -77,6 +78,7 @@ class TodoViewController: UIViewController {
             "due": stringDate,
             "person": newTodo.person,
             "title": newTodo.title,
+            "description" : newTodo.description
         ]) { err in
             if err != nil {
                 print("Error adding Todo")
@@ -101,12 +103,12 @@ class TodoViewController: UIViewController {
                     let data = docSnapshot.data()
                     let stringDate = data["due"] as! String
                     let date = dateFormatterFB.date(from: stringDate)!
-                    let todoEntry: Todo = Todo(title: data["title"] as! String, done: data["done"] as! Bool, person: data["person"] as! String, due: date , id: docSnapshot.documentID )
+                    let todoEntry: Todo = Todo(title: data["title"] as! String, description: data["description"] as! String, done: data["done"] as! Bool, person: data["person"] as! String, due: date , id: docSnapshot.documentID )
                     
-                    let calendar = Calendar.current
+                    let order = Calendar.current.compare(Date(), to: date, toGranularity: .day)
                     if(todoEntry.done) {
                         self.todos[2].entries.append(todoEntry)
-                    } else if(calendar.isDateInToday(date)) {
+                    } else if(order != .orderedAscending) {
                         self.todos[0].entries.append(todoEntry)
                     } else {
                         self.todos[1].entries.append(todoEntry)

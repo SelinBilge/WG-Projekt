@@ -17,54 +17,59 @@
             <objects>
                 <viewController id="6ap-JY-30N" customClass="ProfileScreen" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NnU-LH-fts" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="cnc-1d-GAv">
-                                <rect key="frame" x="74.5" y="177.5" width="265" height="253"/>
+                                <rect key="frame" x="74.5" y="221.5" width="265" height="253"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dein Profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV3-Qc-Us8">
-                                <rect key="frame" x="137" y="94.5" width="140" height="39"/>
+                                <rect key="frame" x="137" y="138.5" width="140" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvJ-GT-670">
-                                <rect key="frame" x="100" y="679" width="214" height="30"/>
+                                <rect key="frame" x="100" y="723" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButton:" destination="6ap-JY-30N" eventType="touchUpInside" id="Nea-oD-kFD"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-nt-IR6">
-                                <rect key="frame" x="168" y="455" width="38" height="18.5"/>
+                                <rect key="frame" x="168" y="499" width="38" height="18.5"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1SX-xE-dJu">
-                                <rect key="frame" x="166.5" y="525" width="41" height="18.5"/>
+                                <rect key="frame" x="166.5" y="569" width="41" height="18.5"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHA-fi-ne0">
-                                <rect key="frame" x="167.5" y="595.5" width="59.5" height="17"/>
+                                <rect key="frame" x="167.5" y="639.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_white" translatesAutoresizingMaskIntoConstraints="NO" id="ch0-fN-nLD">
-                                <rect key="frame" x="95.5" y="439" width="63" height="50"/>
+                                <rect key="frame" x="95.5" y="483" width="63" height="50"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock_white" translatesAutoresizingMaskIntoConstraints="NO" id="Yjn-bj-JrZ">
-                                <rect key="frame" x="95" y="579" width="64" height="50"/>
+                                <rect key="frame" x="95" y="623" width="64" height="50"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_white" translatesAutoresizingMaskIntoConstraints="NO" id="mmy-l5-30Q">
-                                <rect key="frame" x="95" y="509" width="64" height="50"/>
+                                <rect key="frame" x="95" y="553" width="64" height="50"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Trc-ck-XO4"/>
@@ -117,27 +122,32 @@
             <objects>
                 <viewController id="wQp-b6-N3d" customClass="CreateWG" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kxY-Gy-7rD" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WG erstellen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39U-5w-VKw">
-                                <rect key="frame" x="119" y="94.5" width="176" height="39"/>
+                                <rect key="frame" x="119" y="138.5" width="176" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9i-06-m7k">
-                                <rect key="frame" x="100" y="429" width="214" height="30"/>
+                                <rect key="frame" x="100" y="473" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButton:" destination="wQp-b6-N3d" eventType="touchUpInside" id="xsq-7P-dma"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xvF-lm-bW6">
-                                <rect key="frame" x="177.5" y="345.5" width="59.5" height="17"/>
+                                <rect key="frame" x="177.5" y="389.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -146,10 +156,10 @@
                                 </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock_white" translatesAutoresizingMaskIntoConstraints="NO" id="EwP-hn-Aue">
-                                <rect key="frame" x="95" y="329" width="64" height="50"/>
+                                <rect key="frame" x="95" y="373" width="64" height="50"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="WG-Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xip-7M-ofB">
-                                <rect key="frame" x="173.5" y="274.5" width="67.5" height="19"/>
+                                <rect key="frame" x="173.5" y="318.5" width="67.5" height="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -158,7 +168,7 @@
                                 </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_white" translatesAutoresizingMaskIntoConstraints="NO" id="9fL-IE-210">
-                                <rect key="frame" x="96.5" y="253" width="61" height="62"/>
+                                <rect key="frame" x="96.5" y="297" width="61" height="62"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TmJ-f5-v8g"/>
@@ -203,47 +213,62 @@
             <objects>
                 <viewController id="h64-dS-txG" customClass="ViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2eH-CL-Kyf" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wilkommen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL5-RG-27t">
-                                <rect key="frame" x="116" y="122.5" width="182.5" height="43"/>
+                                <rect key="frame" x="116" y="166.5" width="182.5" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBA-My-MD4">
-                                <rect key="frame" x="100" y="349" width="214" height="30"/>
+                                <rect key="frame" x="100" y="393" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="WG erstellen">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="6ap-JY-30N" kind="show" identifier="CreateWG" id="HgJ-HE-UXe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in deiner WG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMx-C7-qrj">
-                                <rect key="frame" x="143" y="190" width="128" height="28"/>
+                                <rect key="frame" x="143" y="234" width="128" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rh8-k4-wdd">
-                                <rect key="frame" x="100" y="409" width="214" height="30"/>
+                                <rect key="frame" x="100" y="453" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="WG beitreten">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="mHG-3V-4tW" kind="show" id="oE1-m4-odp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ct-3l-KVV">
-                                <rect key="frame" x="100" y="469" width="214" height="30"/>
+                                <rect key="frame" x="100" y="513" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="Rpt-47-KFx" kind="show" id="jmh-Sj-ZI2"/>
                                 </connections>
@@ -286,17 +311,17 @@
             <objects>
                 <viewController id="if0-gs-GIH" customClass="inviteToWg" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VEM-Y3-tl7" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Einladen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnN-tL-eER">
-                                <rect key="frame" x="148" y="94.5" width="118" height="39"/>
+                                <rect key="frame" x="148" y="138.5" width="118" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwr-4i-dlh">
-                                <rect key="frame" x="100" y="349" width="214" height="30"/>
+                                <rect key="frame" x="100" y="393" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Code verschicken">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -306,19 +331,19 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ki-YQ-iW1">
-                                <rect key="frame" x="190" y="274.5" width="34.5" height="19"/>
+                                <rect key="frame" x="190" y="318.5" width="34.5" height="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WG-Namen und Code verschicken um der WG beizutreten." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIA-8A-nO6">
-                                <rect key="frame" x="74" y="193.5" width="266" height="41"/>
+                                <rect key="frame" x="74" y="237.5" width="266" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqD-oN-2pB">
-                                <rect key="frame" x="100" y="409" width="214" height="30"/>
+                                <rect key="frame" x="100" y="453" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -370,17 +395,17 @@
             <objects>
                 <viewController id="Bzx-ZR-FHv" customClass="JoinExsistingWG" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DdR-sk-70V" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WG beitreten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9l-qV-0in">
-                                <rect key="frame" x="100" y="94.5" width="214" height="39"/>
+                                <rect key="frame" x="100" y="138.5" width="214" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-xh-hHj">
-                                <rect key="frame" x="100" y="409" width="214" height="30"/>
+                                <rect key="frame" x="100" y="453" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -391,22 +416,22 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJ2-qn-J1y">
-                                <rect key="frame" x="177.5" y="345.5" width="59.5" height="17"/>
+                                <rect key="frame" x="177.5" y="389.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock_white" translatesAutoresizingMaskIntoConstraints="NO" id="9l8-Hr-cXG">
-                                <rect key="frame" x="95" y="329" width="64" height="50"/>
+                                <rect key="frame" x="95" y="373" width="64" height="50"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="WG-Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzu-Ag-yXt">
-                                <rect key="frame" x="173.5" y="274.5" width="67.5" height="19"/>
+                                <rect key="frame" x="173.5" y="318.5" width="67.5" height="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_white" translatesAutoresizingMaskIntoConstraints="NO" id="7Ao-0T-HBz">
-                                <rect key="frame" x="96.5" y="253" width="61" height="62"/>
+                                <rect key="frame" x="96.5" y="297" width="61" height="62"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xlb-Th-miw"/>
@@ -451,17 +476,17 @@
             <objects>
                 <viewController id="2EZ-Qn-cjM" customClass="LogInWG" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yc2-KO-9W4" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Einloggen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-JE-vvq">
-                                <rect key="frame" x="138.5" y="94.5" width="137" height="39"/>
+                                <rect key="frame" x="138.5" y="138.5" width="137" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKe-ot-xhM">
-                                <rect key="frame" x="100" y="469" width="214" height="30"/>
+                                <rect key="frame" x="100" y="513" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="einloggen">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -472,25 +497,25 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axq-tp-BUj">
-                                <rect key="frame" x="177.5" y="345.5" width="59.5" height="17"/>
+                                <rect key="frame" x="177.5" y="389.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock_white" translatesAutoresizingMaskIntoConstraints="NO" id="s2H-2g-wEs">
-                                <rect key="frame" x="95" y="329" width="64" height="50"/>
+                                <rect key="frame" x="95" y="373" width="64" height="50"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="WG-Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WAg-Ne-xwf">
-                                <rect key="frame" x="173.5" y="274.5" width="67.5" height="19"/>
+                                <rect key="frame" x="173.5" y="318.5" width="67.5" height="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_white" translatesAutoresizingMaskIntoConstraints="NO" id="EMu-tL-t5Z">
-                                <rect key="frame" x="96.5" y="253" width="61" height="62"/>
+                                <rect key="frame" x="96.5" y="297" width="61" height="62"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ich habe mein Passwort vergessen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCD-o4-mJR">
-                                <rect key="frame" x="81.5" y="394.5" width="251" height="19.5"/>
+                                <rect key="frame" x="81.5" y="438.5" width="251" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -539,7 +564,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zIF-B3-ZWZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="CgH-uM-c5u">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CgH-uM-c5u">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -559,37 +584,37 @@
             <objects>
                 <viewController id="Rpt-47-KFx" customClass="LogInScreen" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YTP-hk-eIM" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZo-0K-0Ds">
-                                <rect key="frame" x="169" y="94.5" width="76.5" height="39"/>
+                                <rect key="frame" x="169" y="138.5" width="76.5" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpo-0l-qy3">
-                                <rect key="frame" x="100" y="409" width="214" height="30"/>
+                                <rect key="frame" x="100" y="453" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="nextButton:" destination="Rpt-47-KFx" eventType="touchUpInside" id="k1I-4Q-qKe"/>
-                                    <segue destination="CKV-0d-tHv" kind="presentation" identifier="Home" id="678-Wa-njN"/>
+                                    <segue destination="CKV-0d-tHv" kind="presentation" identifier="Home" modalPresentationStyle="fullScreen" id="678-Wa-njN"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-Jn-bLq">
-                                <rect key="frame" x="177.5" y="345.5" width="59.5" height="17"/>
+                                <rect key="frame" x="177.5" y="389.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock_white" translatesAutoresizingMaskIntoConstraints="NO" id="uwD-1Z-ay8">
-                                <rect key="frame" x="95" y="329" width="64" height="50"/>
+                                <rect key="frame" x="95" y="373" width="64" height="50"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-KR-hk8">
-                                <rect key="frame" x="190" y="274.5" width="34.5" height="19"/>
+                                <rect key="frame" x="190" y="318.5" width="34.5" height="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -598,7 +623,7 @@
                                 </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_white" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-dS-2VH">
-                                <rect key="frame" x="95" y="259" width="64" height="50"/>
+                                <rect key="frame" x="95" y="303" width="64" height="50"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ReE-tD-wjW"/>
@@ -642,11 +667,11 @@
             <objects>
                 <viewController id="mHG-3V-4tW" customClass="ViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IG9-PY-Dep" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAj-A7-soP">
-                                <rect key="frame" x="100" y="409" width="214" height="30"/>
+                                <rect key="frame" x="100" y="453" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="NEIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -656,13 +681,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hast du bereits einen Account?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZm-CU-EFM">
-                                <rect key="frame" x="50" y="116" width="314" height="76.5"/>
+                                <rect key="frame" x="50" y="160" width="314" height="76.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSZ-T7-Kxw">
-                                <rect key="frame" x="100" y="339" width="214" height="30"/>
+                                <rect key="frame" x="100" y="383" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="JA">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -706,17 +731,17 @@
             <objects>
                 <viewController id="sXS-Py-830" customClass="LogInCreateWG" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sb2-Ip-YkY" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUh-2N-Hhg">
-                                <rect key="frame" x="169" y="94.5" width="76.5" height="39"/>
+                                <rect key="frame" x="169" y="138.5" width="76.5" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epk-S7-U8p">
-                                <rect key="frame" x="100" y="409" width="214" height="30"/>
+                                <rect key="frame" x="100" y="453" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -726,22 +751,22 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qoD-NG-kye">
-                                <rect key="frame" x="177.5" y="345.5" width="59.5" height="17"/>
+                                <rect key="frame" x="177.5" y="389.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock_white" translatesAutoresizingMaskIntoConstraints="NO" id="fpL-8g-2Te">
-                                <rect key="frame" x="95" y="329" width="64" height="50"/>
+                                <rect key="frame" x="95" y="373" width="64" height="50"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czI-Lb-siY">
-                                <rect key="frame" x="190" y="274.5" width="34.5" height="19"/>
+                                <rect key="frame" x="190" y="318.5" width="34.5" height="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_white" translatesAutoresizingMaskIntoConstraints="NO" id="mDD-cm-60c">
-                                <rect key="frame" x="95" y="259" width="64" height="50"/>
+                                <rect key="frame" x="95" y="303" width="64" height="50"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W8H-RF-aXQ"/>
@@ -786,20 +811,20 @@
             <objects>
                 <viewController id="amJ-rB-gkt" customClass="Register" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VT8-vf-47j" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="8hD-2V-NZD">
-                                <rect key="frame" x="74.5" y="177.5" width="265" height="253"/>
+                                <rect key="frame" x="74.5" y="221.5" width="265" height="253"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dein Profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTi-mc-kg8">
-                                <rect key="frame" x="137" y="94.5" width="140" height="39"/>
+                                <rect key="frame" x="137" y="138.5" width="140" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAN-5A-aXS">
-                                <rect key="frame" x="100" y="679" width="214" height="30"/>
+                                <rect key="frame" x="100" y="723" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -809,7 +834,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ob-Q5-bSy">
-                                <rect key="frame" x="168" y="455" width="38" height="18.5"/>
+                                <rect key="frame" x="168" y="499" width="38" height="18.5"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -819,25 +844,25 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-Mx-mZc">
-                                <rect key="frame" x="166.5" y="525" width="41" height="18.5"/>
+                                <rect key="frame" x="166.5" y="569" width="41" height="18.5"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="75m-It-Vfd">
-                                <rect key="frame" x="167.5" y="595.5" width="59.5" height="17"/>
+                                <rect key="frame" x="167.5" y="639.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_white" translatesAutoresizingMaskIntoConstraints="NO" id="pO7-86-4eA">
-                                <rect key="frame" x="95.5" y="439" width="63" height="50"/>
+                                <rect key="frame" x="95.5" y="483" width="63" height="50"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock_white" translatesAutoresizingMaskIntoConstraints="NO" id="bGP-CE-7ZM">
-                                <rect key="frame" x="95" y="579" width="64" height="50"/>
+                                <rect key="frame" x="95" y="623" width="64" height="50"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_white" translatesAutoresizingMaskIntoConstraints="NO" id="v2W-2J-rx6">
-                                <rect key="frame" x="95" y="509" width="64" height="50"/>
+                                <rect key="frame" x="95" y="553" width="64" height="50"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oYG-aY-vHt"/>
@@ -891,11 +916,11 @@
             <objects>
                 <viewController id="Ric-0v-wpH" customClass="TodoViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cg-fT-dxE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HVn-31-zop">
-                                <rect key="frame" x="30" y="158.5" width="354" height="600.5"/>
+                                <rect key="frame" x="30" y="190.5" width="354" height="622.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -957,7 +982,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="center" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dX2-3u-Pdq">
-                                <rect key="frame" x="185.5" y="96" width="43.5" height="42.5"/>
+                                <rect key="frame" x="185.5" y="128" width="43.5" height="42.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" name="Wg2"/>
                                 <state key="normal">
@@ -998,11 +1023,11 @@
             <objects>
                 <viewController id="PIj-wI-IFE" customClass="TodoDetailViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="66V-OA-pHS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZv-kT-zRs">
-                                <rect key="frame" x="0.0" y="559" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="613" width="414" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61b-oN-dRn">
                                         <rect key="frame" x="30" y="25" width="33" height="21"/>
@@ -1075,7 +1100,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCD-ns-quu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="559"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="569"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                             </view>
@@ -1256,6 +1281,7 @@
                     <connections>
                         <outlet property="personCollection" destination="rWR-gF-hmY" id="5Oi-Pd-7gc"/>
                         <outlet property="todoDate" destination="Gab-70-hZd" id="ZSl-0E-VK7"/>
+                        <outlet property="todoDescription" destination="3r9-9A-Ypa" id="fht-Mk-Crd"/>
                         <outlet property="todoTitle" destination="zX8-N2-Mh7" id="8V4-sC-Kth"/>
                         <segue destination="S7p-ks-gpd" kind="unwind" identifier="unwindFromAddTodo" unwindAction="unwindToCalendarViewWithSegue:" id="6FW-eB-F8T"/>
                     </connections>
@@ -1270,11 +1296,11 @@
             <objects>
                 <viewController id="2Mu-7k-8pW" customClass="CalendarViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7As-GN-aP0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bC4-WA-wV4" customClass="FSCalendar">
-                                <rect key="frame" x="60" y="86" width="294" height="250"/>
+                                <rect key="frame" x="60" y="118" width="294" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" name="Wg2"/>
                                 <constraints>
@@ -1318,7 +1344,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="3cb-bb-7rz">
-                                <rect key="frame" x="30" y="386" width="354" height="373"/>
+                                <rect key="frame" x="30" y="418" width="354" height="395"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calendarCell" id="f9r-9f-KRW" customClass="CalendarCell" customModule="WG_Projekt" customModuleProvider="target">
@@ -1895,11 +1921,11 @@
             <objects>
                 <viewController id="zCo-wg-dkN" customClass="ShoppingViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8YE-fJ-qUR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Produkt hinzufügen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-zq-dUR">
-                                <rect key="frame" x="50" y="106" width="200" height="34"/>
+                                <rect key="frame" x="50" y="138" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="FkP-oH-lIK"/>
                                 </constraints>
@@ -1907,7 +1933,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctq-1M-qBN">
-                                <rect key="frame" x="265" y="109.5" width="28" height="27"/>
+                                <rect key="frame" x="265" y="141.5" width="28" height="27"/>
                                 <color key="tintColor" name="Wg2"/>
                                 <state key="normal" image="plus.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
@@ -1917,7 +1943,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ys7-WZ-oJb">
-                                <rect key="frame" x="30" y="240" width="354" height="508"/>
+                                <rect key="frame" x="30" y="272" width="354" height="508"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="508" id="h5V-W5-tdq"/>
@@ -2034,7 +2060,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="U8l-Y7-EFQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2055,7 +2081,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aYP-qA-dZh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2076,7 +2102,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NHU-Ss-fW0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2090,7 +2116,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="678-Wa-njN"/>
+        <segue reference="W67-dD-Ne3"/>
         <segue reference="D2J-ks-4Cg"/>
     </inferredMetricsTieBreakers>
     <resources>

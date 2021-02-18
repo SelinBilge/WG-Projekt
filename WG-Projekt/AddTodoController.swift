@@ -23,6 +23,7 @@ class AddTodoController: UIViewController{
     @IBOutlet weak var personCollection: UICollectionView!
     @IBOutlet weak var todoTitle: UITextField!
     @IBOutlet weak var todoDate: UIDatePicker!
+    @IBOutlet weak var todoDescription: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +35,10 @@ class AddTodoController: UIViewController{
     //The Todo gets added and the view is closed
     @IBAction func addTodo(_ sender: Any) {
         if(todoTitle.text == "" ||  activePerson == -1) {
-            //TODO display snackbar
+            self.showToast(message: "Bitte Titel und Person eingeben", font: .systemFont(ofSize: 12.0))
         } else {
             let date = todoDate.date
-            newTodo = Todo(title: todoTitle.text!, done: false, person: users[activePerson].name, due: date, id: "")
+            newTodo = Todo(title: todoTitle.text!, description: todoDescription.text!, done: false, person: users[activePerson].name, due: date, id: "")
             performSegue(withIdentifier: "unwindFromAddTodo", sender: nil)
         }
     }

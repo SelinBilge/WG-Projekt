@@ -35,6 +35,7 @@ class AddPollViewController: UIViewController {
     @IBAction func createPoll(_ sender: Any) {
         var optionsArray: [String] = []
         if(pollDescription.text == "") {
+            self.showToast(message: "Beschreibung hinzufügen", font: .systemFont(ofSize: 12.0))
             return
         }
         //Create an Array with the options
@@ -46,6 +47,7 @@ class AddPollViewController: UIViewController {
         }
         //Array has to have more than 1 option
         if(optionsArray.count <= 1) {
+            self.showToast(message: "Mehr als zwei Optionen notwendig", font: .systemFont(ofSize: 12.0))
             return
         }
         //Create a map for the users where the default value is -1, create Poll and store it in the class variable, perform segue

@@ -47,8 +47,12 @@ class TodoDetailViewController: UIViewController {
         
         todoTitle.text = todo.title
         todoUsers.text = todo.person
-        todoDue.text = dateFormatterTime.string(from: todo.due) + " " + dateFormatterWOY.string(from: todo.due)
-        todoDescription.text = "Keine Beschreibung"
+        todoDue.text = dateFormatterWOY.string(from: todo.due)
+        if(todo.description == "") {
+            todoDescription.text = "Keine Beschreibung"
+        } else{
+            todoDescription.text = todo.description
+        }
         if(todo.done) {
             todoStatus.text = "erledigt"
         } else {
