@@ -73,6 +73,9 @@ class LogInScreen: UIViewController {
                             let testUser = Singelton.sharedInstance.fetchdata()
                             testUser.userName = name
                             
+                            // save wgid in singelton
+                            testUser.wgid = wgkey
+                            
                             
                             // read data from specific document ID
                             db.collection("wgs").document(wgkey).getDocument { (document, error) in
@@ -86,7 +89,7 @@ class LogInScreen: UIViewController {
                                         
                                         // STIMMT SO DER ZUGRIFF AUF DAS ARRAY????
                                         // TESTEN MIT MEHREREN MITGLIEDERN
-                                        users = docData!["users"] as? [String] ?? []
+                                        users = (docData!["users"] as? [String])!
                                         print("Test get other users: \(users)")
                                         
                                         // save other wg members in singelton
@@ -95,6 +98,9 @@ class LogInScreen: UIViewController {
                                         users.forEach { user in
                                             testUser.members.append(user)
                                         }
+                                        
+                                        print("------------------------")
+                                        Singelton.sharedInstance.fetchdata()
                                         
                                     }
                                 }

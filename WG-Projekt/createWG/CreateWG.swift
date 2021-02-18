@@ -77,6 +77,11 @@ class CreateWG: UIViewController {
                         print("CreateWG -> Test get username: \(username)")
                 
                         
+                        // save wgid in singelton
+                        let testUser = Singelton.sharedInstance.fetchdata()
+                        testUser.wgid = wgkey
+                        
+                        
                         // add a document with specific id -> is the wgkey
                         db.collection("wgs").document(wgkey).setData(["wgname":wgname, "wgpasswort":wgpassword, "userkey":["0":userID], "users":["0":username]]) { (error) in
                             

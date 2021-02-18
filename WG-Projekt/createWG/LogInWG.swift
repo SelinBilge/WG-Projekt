@@ -51,6 +51,7 @@ class LogInWG: UIViewController {
             
             
             if wgNameText.text == wgname && wgPasswortText.text == passw {
+                
                 // go to next screen
                 self.performSegue(withIdentifier: "Home", sender: nil)
 
