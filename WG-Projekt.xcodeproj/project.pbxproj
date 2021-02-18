@@ -37,10 +37,12 @@
 		DA57536325DA8F1B003A880A /* PollResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57536225DA8F1B003A880A /* PollResultCell.swift */; };
 		DA57536625DA942F003A880A /* AddPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57536525DA942F003A880A /* AddPollViewController.swift */; };
 		DA57536925DA9587003A880A /* PollOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57536825DA9587003A880A /* PollOptionCell.swift */; };
-		DA57536C25DA9C24003A880A /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57536B25DA9C24003A880A /* ShoppingViewController.swift */; };
 		DA57539B25DAB280003A880A /* LogInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18D201225D6E7FB00C186CA /* LogInScreen.swift */; };
 		DA57539D25DAB2B3003A880A /* inviteToWg.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BA1EA25D80CAE00752FA4 /* inviteToWg.swift */; };
 		DA57539F25DAB2B7003A880A /* CreateWG.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BA1E725D7F77100752FA4 /* CreateWG.swift */; };
+		DA73A83725DE9E21008282AF /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73A83625DE9E21008282AF /* ShoppingCell.swift */; };
+		DA73A83B25DE9EB8008282AF /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73A83A25DE9EB8008282AF /* TodoDetailViewController.swift */; };
+		DA73A83E25DE9EE2008282AF /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73A83D25DE9EE2008282AF /* ShoppingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +83,9 @@
 		DA57536225DA8F1B003A880A /* PollResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollResultCell.swift; sourceTree = "<group>"; };
 		DA57536525DA942F003A880A /* AddPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPollViewController.swift; sourceTree = "<group>"; };
 		DA57536825DA9587003A880A /* PollOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollOptionCell.swift; sourceTree = "<group>"; };
-		DA57536B25DA9C24003A880A /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		DA73A83625DE9E21008282AF /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
+		DA73A83A25DE9EB8008282AF /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
+		DA73A83D25DE9EE2008282AF /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,9 +153,9 @@
 				DA57535D25DA8EDD003A880A /* cells */,
 				D1B9540025D4025A00605EFD /* AppDelegate.swift */,
 				D1B9540225D4025A00605EFD /* SceneDelegate.swift */,
+				DA73A83D25DE9EE2008282AF /* ShoppingViewController.swift */,
 				D1B9540425D4025A00605EFD /* ViewController.swift */,
 				D1B9540625D4025A00605EFD /* Main.storyboard */,
-				DA57536B25DA9C24003A880A /* ShoppingViewController.swift */,
 				D154877225DD934E007391EC /* Singelton.swift */,
 				DA57536525DA942F003A880A /* AddPollViewController.swift */,
 				DA57535A25DA8E63003A880A /* PollViewController.swift */,
@@ -173,6 +177,7 @@
 				DA01AC8E25D6A79F007E0B39 /* TodoViewController.swift */,
 				DA01AC9225D6A84E007E0B39 /* Colors.xcassets */,
 				DA57533B25D837EA003A880A /* CalendarDetailViewController.swift */,
+				DA73A83A25DE9EB8008282AF /* TodoDetailViewController.swift */,
 			);
 			path = "WG-Projekt";
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				DA57535E25DA8F0B003A880A /* PollCell.swift */,
 				DA57536225DA8F1B003A880A /* PollResultCell.swift */,
 				DA57536825DA9587003A880A /* PollOptionCell.swift */,
+				DA73A83625DE9E21008282AF /* ShoppingCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -326,18 +332,20 @@
 				DA57534225DA6443003A880A /* CalendarCell.swift in Sources */,
 				DA57533C25D837EA003A880A /* CalendarDetailViewController.swift in Sources */,
 				DA57533F25D8474B003A880A /* CalendarEventCell.swift in Sources */,
+				DA73A83725DE9E21008282AF /* ShoppingCell.swift in Sources */,
 				DA57535B25DA8E63003A880A /* PollViewController.swift in Sources */,
 				DA01AC8525D6A6BC007E0B39 /* AddTodoController.swift in Sources */,
 				D1B9541A25D4056E00605EFD /* ProfileScreen.swift in Sources */,
 				D1B9540125D4025A00605EFD /* AppDelegate.swift in Sources */,
 				DA57536625DA942F003A880A /* AddPollViewController.swift in Sources */,
+				DA73A83B25DE9EB8008282AF /* TodoDetailViewController.swift in Sources */,
 				D1B9541825D4054000605EFD /* GradientView.swift in Sources */,
 				D1B9540325D4025A00605EFD /* SceneDelegate.swift in Sources */,
 				D164A69425DD5A3B00C6AECB /* Register.swift in Sources */,
 				DA57539B25DAB280003A880A /* LogInScreen.swift in Sources */,
+				DA73A83E25DE9EE2008282AF /* ShoppingViewController.swift in Sources */,
 				DA57536325DA8F1B003A880A /* PollResultCell.swift in Sources */,
 				DA57536925DA9587003A880A /* PollOptionCell.swift in Sources */,
-				DA57536C25DA9C24003A880A /* ShoppingViewController.swift in Sources */,
 				D154877325DD934E007391EC /* Singelton.swift in Sources */,
 				DA01AC8B25D6A743007E0B39 /* CalendarViewController.swift in Sources */,
 				D109113A25D7F30F00963A89 /* LogInCreateWG.swift in Sources */,

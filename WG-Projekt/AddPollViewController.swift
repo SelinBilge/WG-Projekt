@@ -9,49 +9,64 @@
 import UIKit
 
 class AddPollViewController: UIViewController {
-    var optionCounter = 2
+    var optionCounter = 2 //counter starts with 2
+    var newPoll: Poll!  // newPoll that is accassable in the CalendarVC
 
     @IBOutlet weak var pollDescription: UITextField!
     @IBOutlet weak var pollDue: UIDatePicker!
     @IBOutlet weak var pollOptions: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pollOptions.delegate = self
         pollOptions.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
+    //Button for adding an option
+    //option counter is incremented and the data is reloaded
     @IBAction func addOption(_ sender: Any) {
         optionCounter += 1
         pollOptions.reloadData()
     }
-    @IBAction func createPoll(_ sender: Any) {
-    }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //Create the Poll
+    //Gets properties, creates a Poll and performs a Segue
+    @IBAction func createPoll(_ sender: Any) {
+        var optionsArray: [String] = []
+        if(pollDescription.text == "") {
+            return
+        }
+        //Create an Array with the options
+        for k in 0...optionCounter-1 {
+            let cell = pollOptions.cellForRow(at: IndexPath(row: k, section: 0)) as! PollOptionCell
+            if(cell.pollOption.text != "") {
+                optionsArray.append(cell.pollOption.text!)
+            }
+        }
+        //Array has to have more than 1 option
+        if(optionsArray.count <= 1) {
+            return
+        }
+        //Create a map for the users where the default value is -1, create Poll and store it in the class variable, perform segue
+        let userMap : [String: Int] = ["Emil" : -11, "Hanna": -1, "Paul":-1, "Jerome":-1]
+        newPoll = Poll(title: pollDescription.text!, user: userMap, options: optionsArray, till: pollDue.date, finished: false, id: "")
+        performSegue(withIdentifier: "unwindFromPoll", sender: nil)
     }
-    */
+
 
 }
 
 
 
 extension AddPollViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    //option count -> stored in variable
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return optionCounter
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+    //cell creation
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "pollOptionCell", for: indexPath) as? PollOptionCell else {
             fatalError("Cell could not be cast")
@@ -60,7 +75,7 @@ extension AddPollViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    
+    //delete cells
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             optionCounter -= 1
@@ -70,3 +85,4 @@ extension AddPollViewController: UITableViewDataSource, UITableViewDelegate {
     
     
 }
+
