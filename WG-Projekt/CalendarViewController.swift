@@ -9,6 +9,7 @@
 import UIKit
 import FSCalendar
 import Firebase
+import FirebaseAuth
 
 //Struct for one Event in the calendar
 struct Event {
@@ -52,6 +53,7 @@ var dateFormatterTime: DateFormatter = {
 
 
 class CalendarViewController: UIViewController {
+    var userObject = Singelton.sharedInstance.fetchdata()
     let db = Firestore.firestore()
     var eventsArray: [CalendarSection] = []
     var polls: [Poll] = []
@@ -66,6 +68,7 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         //Navigation Bar setup
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         guard
             let navigationController = navigationController,
             let flareGradientImage = CAGradientLayer.primaryGradient(on: navigationController.navigationBar)
@@ -74,6 +77,11 @@ class CalendarViewController: UIViewController {
             return
         }
         navigationController.navigationBar.barTintColor = UIColor(patternImage: flareGradientImage)
+        
+        //LogoutButton
+        navigationItem.rightBarButtonItem = UIBarButtonItem.menuButton(self, action: #selector(logout), imageName: "logout")
+
+    
         
         //set delegate and data source
         calendar.dataSource = self
@@ -113,7 +121,7 @@ class CalendarViewController: UIViewController {
     // Fetches the events from firestore. The events are then sorted and combined in sections
     func fetchEventData() {
         eventsArray = []
-        let collectionRef = db.collection("calendar").document("idx").collection("events")
+        let collectionRef = db.collection("calendar").document(userObject.wgid).collection("events")
         collectionRef.getDocuments { (querySnapshot, err) in
             if let docs = querySnapshot?.documents {
                 for docSnapshot in docs {
@@ -163,7 +171,7 @@ class CalendarViewController: UIViewController {
     // Fetch the poll entries from firestore.
     func fetchPollData() {
         polls = []
-        let collectionRef = db.collection("poll").document("idx").collection("polls")
+        let collectionRef = db.collection("poll").document(userObject.wgid).collection("polls")
         collectionRef.getDocuments { (querySnapshot, err) in
             if let docs = querySnapshot?.documents {
                 for docSnapshot in docs {
@@ -192,7 +200,7 @@ class CalendarViewController: UIViewController {
         let newEvent = vc.newEvent!
         let stringDate = dateFormatterFB.string(from: newEvent.date)
         
-        let ref = db.collection("calendar").document("idx").collection("events")
+        let ref = db.collection("calendar").document(userObject.wgid).collection("events")
         ref.addDocument(data: [
             "title": newEvent.title,
             "description": newEvent.description,
@@ -214,7 +222,7 @@ class CalendarViewController: UIViewController {
         let newPoll = vc.newPoll!
         let stringDate = dateFormatterFB.string(from: newPoll.till)
         
-        let ref = db.collection("poll").document("idx").collection("polls")
+        let ref = db.collection("poll").document(userObject.wgid).collection("polls")
         ref.addDocument(data: [
             "title": newPoll.title,
             "decisions": newPoll.user,
@@ -233,7 +241,7 @@ class CalendarViewController: UIViewController {
     
     //delete event from firestore and fetch data
     func deleteEvent(id: String) {
-        let ref = db.collection("calendar").document("idx").collection("events").document(id)
+        let ref = db.collection("calendar").document(userObject.wgid).collection("events").document(id)
         ref.delete() { err in
             if let err = err {
                 print("Unable to delete document, reason: \(err)")
@@ -246,7 +254,7 @@ class CalendarViewController: UIViewController {
     
     //Delete poll from firestore and fetch data
     func deletePoll(id: String) {
-        let ref = db.collection("poll").document("idx").collection("polls").document(id)
+        let ref = db.collection("poll").document(userObject.wgid).collection("polls").document(id)
         ref.delete() { err in
             if let err = err {
                 print("Unable to delete document, reason: \(err)")
@@ -255,6 +263,19 @@ class CalendarViewController: UIViewController {
                 self.fetchPollData()
             }
         }
+    }
+    
+    //Logout and transition to start
+    @objc func logout() {
+        do
+        {
+             try Auth.auth().signOut()
+        }
+        catch let error as NSError
+        {
+            print(error)
+        }
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
 }
@@ -358,13 +379,13 @@ extension CalendarViewController : UITableViewDataSource {
                     resultArray[user.value] += 1
                 }
             }
-            if(polls[indexPath.row].user["Paul"] != -1) {
-                result = resultArray[polls[indexPath.row].user["Paul"]!] - resultArray.max()!
+            if(polls[indexPath.row].user[userObject.userName] != -1) {
+                result = resultArray[polls[indexPath.row].user[userObject.userName]!] - resultArray.max()!
             }
             cell.eventTitle.text = polls[indexPath.row].title
             if(polls[indexPath.row].finished){
                 cell.eventDetail.text = "beendet"
-                if(polls[indexPath.row].user["Paul"] == -1) {
+                if(polls[indexPath.row].user[userObject.userName] == -1) {
                     cell.eventImage.isHidden = true
                 } else if(result >= 0) {
                     cell.eventImage.image = UIImage(systemName: "person.3.fill")
@@ -374,7 +395,7 @@ extension CalendarViewController : UITableViewDataSource {
                     cell.eventImage.isHidden = false
                 }
                 
-            } else if(polls[indexPath.row].user["Paul"] != -1) {
+            } else if(polls[indexPath.row].user[userObject.userName] != -1) {
                 cell.eventDetail.text = ""
                 if(result >= 0) {
                     cell.eventImage.image = UIImage(systemName: "person.3.fill")
@@ -492,3 +513,20 @@ extension CalendarViewController: PollDelegate {
     }
 }
 
+
+
+extension UIBarButtonItem {
+
+    static func menuButton(_ target: Any?, action: Selector, imageName: String) -> UIBarButtonItem {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: imageName), for: .normal)
+        button.addTarget(target, action: action, for: .touchUpInside)
+
+        let menuBarItem = UIBarButtonItem(customView: button)
+        menuBarItem.customView?.translatesAutoresizingMaskIntoConstraints = false
+        menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 24).isActive = true
+
+        return menuBarItem
+    }
+}

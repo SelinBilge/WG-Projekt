@@ -11,6 +11,7 @@ import FirebaseAuth
 import Firebase
 
 class JoinExsistingWG: UIViewController {
+    let db = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class JoinExsistingWG: UIViewController {
         if wgNametext.text != "" && wgPasswordText.text != "" {
             
             let  userID = Auth.auth().currentUser!.uid
-            let db = Firestore.firestore()
+            
        
             var username = ""
             var wgkey = ""
@@ -67,7 +68,7 @@ class JoinExsistingWG: UIViewController {
                             print("CHECK: \(self.wgNametext.text!)")
                             
                             // search given wg in database
-                            db.collection("wgs").whereField("wgname", isEqualTo: self.wgNametext.text!).getDocuments() { (querySnapshot, err) in
+                            self.db.collection("wgs").whereField("wgname", isEqualTo: self.wgNametext.text!).getDocuments() { (querySnapshot, err) in
                                 if let err = err {
                                     print("Error getting documents: \(err)")
                                 } else {
@@ -95,7 +96,7 @@ class JoinExsistingWG: UIViewController {
                                             
                                             // get other wg members
                                             // read data from specific document ID
-                                            db.collection("wgs").document(documentID).getDocument { (document, error) in
+                                            self.db.collection("wgs").document(documentID).getDocument { (document, error) in
                                            
                                                 if error == nil {
                                                     // check if document exists
@@ -124,7 +125,7 @@ class JoinExsistingWG: UIViewController {
                                             
                                             // add user in wg document with id
                                             // Atomically add a new region to the "users" and "userkey" array field.
-                                            db.collection("wgs").document(documentID).updateData([
+                                            self.db.collection("wgs").document(documentID).updateData([
                                              "userkey": FieldValue.arrayUnion([userID]),
                                              "users": FieldValue.arrayUnion([username]) ]) { (error) in
                                                 
@@ -135,10 +136,12 @@ class JoinExsistingWG: UIViewController {
                                                 }
                                                 
                                             }
+                                            
+                                            
 
                                              // update user
                                              // updating a specific document id
-                                             db.collection("users").document(userID).updateData(["wgname":self.wgNametext.text!, "wgpasswort":self.wgPasswordText.text!, "wgkey": documentID]) { (error) in
+                                            self.db.collection("users").document(userID).updateData(["wgname":self.wgNametext.text!, "wgpasswort":self.wgPasswordText.text!, "wgkey": documentID]) { (error) in
                                                  
                                                  if let error = error{
                                                      print("JoinExsistingWG -> \(error.localizedDescription)")
@@ -153,6 +156,8 @@ class JoinExsistingWG: UIViewController {
                                                     self.performSegue(withIdentifier: "Home", sender: nil)
                                                  }
                                              }
+                                            
+                                            self.updateWgPolls(wgId: testUser.wgid, username: testUser.userName)
                                             
                                         } else {
                                             self.showToast(message: "Diese WG existiert nicht", font: .systemFont(ofSize: 12.0))
@@ -177,6 +182,31 @@ class JoinExsistingWG: UIViewController {
             self.showToast(message: "Bitte fülle alle Felder aus", font: .systemFont(ofSize: 12.0))
         }
     
+    }
+    
+    
+    func updateWgPolls(wgId: String, username: String) {
+        let collectionRef = db.collection("poll").document(wgId).collection("polls")
+        collectionRef.getDocuments { (querySnapshot, err) in
+            if let docs = querySnapshot?.documents {
+                for docSnapshot in docs {
+                    let pollid = docSnapshot.documentID
+                    let data = docSnapshot.data()
+                    var decisions = data["decisions"] as! [String:Int]
+                    decisions[username] = -1
+                    let pollRef = self.db.collection("poll").document(wgId).collection("polls").document(pollid)
+                    pollRef.updateData([
+                        "decisions": decisions
+                        ]) { err in
+                            if let err = err {
+                                print("Unable to update data, reason: \(err)")
+                            } else {
+                                
+                            }
+                        }
+                }
+            }
+        }
     }
     
     

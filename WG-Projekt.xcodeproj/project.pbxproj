@@ -43,6 +43,7 @@
 		DA73A83725DE9E21008282AF /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73A83625DE9E21008282AF /* ShoppingCell.swift */; };
 		DA73A83B25DE9EB8008282AF /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73A83A25DE9EB8008282AF /* TodoDetailViewController.swift */; };
 		DA73A83E25DE9EE2008282AF /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73A83D25DE9EE2008282AF /* ShoppingViewController.swift */; };
+		DAC8FFE225DFEB7D006E262A /* AutoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC8FFE125DFEB7D006E262A /* AutoLogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		DA73A83625DE9E21008282AF /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
 		DA73A83A25DE9EB8008282AF /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
 		DA73A83D25DE9EE2008282AF /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		DAC8FFE125DFEB7D006E262A /* AutoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLogin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				DA73A83D25DE9EE2008282AF /* ShoppingViewController.swift */,
 				D1B9540425D4025A00605EFD /* ViewController.swift */,
 				D1B9540625D4025A00605EFD /* Main.storyboard */,
+				DAC8FFE125DFEB7D006E262A /* AutoLogin.swift */,
 				D154877225DD934E007391EC /* Singelton.swift */,
 				DA57536525DA942F003A880A /* AddPollViewController.swift */,
 				DA57535A25DA8E63003A880A /* PollViewController.swift */,
@@ -343,6 +346,7 @@
 				D1B9540325D4025A00605EFD /* SceneDelegate.swift in Sources */,
 				D164A69425DD5A3B00C6AECB /* Register.swift in Sources */,
 				DA57539B25DAB280003A880A /* LogInScreen.swift in Sources */,
+				DAC8FFE225DFEB7D006E262A /* AutoLogin.swift in Sources */,
 				DA73A83E25DE9EE2008282AF /* ShoppingViewController.swift in Sources */,
 				DA57536325DA8F1B003A880A /* PollResultCell.swift in Sources */,
 				DA57536925DA9587003A880A /* PollOptionCell.swift in Sources */,

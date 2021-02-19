@@ -29,36 +29,7 @@ class ProfileScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // add an done button to the keyboard
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y:0, width: view.frame.size.width, height: 50))
-       
-        // items
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(didTapDone))
-        
-        toolbar.items = [flexibleSpace, doneButton]
-        toolbar.sizeToFit()
-        
-        nameText.inputAccessoryView = toolbar
-        emailText.inputAccessoryView = toolbar
-        passwordText.inputAccessoryView = toolbar
-        
     }
-    
-        // close keyboard after clicking on done button
-         @objc private func didTapDone(){
-            nameText.resignFirstResponder()
-            emailText.resignFirstResponder()
-            passwordText.resignFirstResponder()
-         }
-       
-    override func viewDidAppear(_ animated: Bool) {
-           super.viewDidAppear(animated)
-           nameText.becomeFirstResponder()
-           emailText.becomeFirstResponder()
-           passwordText.becomeFirstResponder()
-       }
 
     @IBAction func name(_ sender: Any) {
     }

@@ -14,6 +14,7 @@ protocol PollDelegate: class {
 }
 
 class PollViewController: UIViewController {
+    var userObject = Singelton.sharedInstance.fetchdata()
     weak var delegate: PollDelegate?
     let db = Firestore.firestore()
     var poll: Poll!  //current poll
@@ -43,7 +44,7 @@ class PollViewController: UIViewController {
             pollDue.text = "bis " + dateFormatterFS.string(from: poll.till) + " " +  dateFormatterTime.string(from: poll.till)
         }
         
-        if(self.poll.user["Paul"] == -1) {
+        if(self.poll.user[userObject.userName] == -1) {
             self.decided = false
             self.pollButton.setTitle("abstimmen", for: .normal)
         } else {
@@ -71,8 +72,8 @@ class PollViewController: UIViewController {
         }
         
         //modifie user array to update it in firestore
-        poll.user["Paul"] = chosenCell
-        let ref = db.collection("poll").document("idx").collection("polls").document(poll.id)
+        poll.user[userObject.userName] = chosenCell
+        let ref = db.collection("poll").document(userObject.wgid).collection("polls").document(poll.id)
         ref.updateData([
             "decisions": poll.user
             ]) { err in

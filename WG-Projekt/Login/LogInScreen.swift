@@ -44,8 +44,6 @@ class LogInScreen: UIViewController {
                 self.showToast(message: error!.localizedDescription, font: .systemFont(ofSize: 12.0))
                 
             } else {
-                print("Login was successful")
-                
                 // get the wgkey for specific user
                 let db = Firestore.firestore()
                 let  userID = Auth.auth().currentUser!.uid
@@ -54,20 +52,16 @@ class LogInScreen: UIViewController {
                 var name = ""
                 var users = [String]()
 
-                
                 // read data from specific document ID
                 db.collection("users").document(userID).getDocument { (document, error) in
-               
                     if error == nil {
                         // check if document exists
                         if document != nil && document!.exists {
                                                 
                             let docData = document!.data()
                             wgkey = docData!["wgkey"] as? String ?? ""
-                            print("Test get wgkey: \(wgkey)")
                             
                             name = docData!["name"] as? String ?? ""
-                            print("Test get name: \(name)")
                             
                             // save name in singelton
                             let testUser = Singelton.sharedInstance.fetchdata()
@@ -86,11 +80,7 @@ class LogInScreen: UIViewController {
                                                             
                                         let docData = document!.data()
                                         
-                                        
-                                        // STIMMT SO DER ZUGRIFF AUF DAS ARRAY????
-                                        // TESTEN MIT MEHREREN MITGLIEDERN
                                         users = (docData!["users"] as? [String])!
-                                        print("Test get other users: \(users)")
                                         
                                         // save other wg members in singelton
                                         let testUser = Singelton.sharedInstance.fetchdata()
@@ -99,9 +89,8 @@ class LogInScreen: UIViewController {
                                             testUser.members.append(user)
                                         }
                                         
-                                        print("------------------------")
-                                        Singelton.sharedInstance.fetchdata()
-                                        
+                                        // go to next screen
+                                        self.performSegue(withIdentifier: "Home", sender: nil)
                                     }
                                 }
                             }
@@ -109,9 +98,6 @@ class LogInScreen: UIViewController {
                         }
                     }
                 }
-                          
-                // go to next screen
-                self.performSegue(withIdentifier: "Home", sender: nil)
             }
         }
         }

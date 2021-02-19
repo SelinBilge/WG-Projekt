@@ -24,6 +24,7 @@ struct Item: Codable{
 
 
 class ShoppingViewController: UIViewController {
+    var userObject = Singelton.sharedInstance.fetchdata()
     //Array that stores the todo sectios
     private var shoppingList: [ShoppingSection] = []
     let db = Firestore.firestore()
@@ -66,7 +67,7 @@ class ShoppingViewController: UIViewController {
             return
         }
         
-        let ref = db.collection("shoppinglist").document("idx").collection("items")
+        let ref = db.collection("shoppinglist").document(userObject.wgid).collection("items")
         ref.addDocument(data: [
             "bought": false,
             "title": addField.text!,
@@ -86,8 +87,12 @@ class ShoppingViewController: UIViewController {
         shoppingList[0].entries = []
         shoppingList[1].entries = []
         
-        let collectionRef = db.collection("shoppinglist").document("idx").collection("items")
+        print(userObject.wgid)
+        let collectionRef = db.collection("shoppinglist").document(userObject.wgid).collection("items")
         collectionRef.getDocuments { (querySnapshot, err) in
+            if let error = err {
+                print(error)
+            }
             if let docs = querySnapshot?.documents {
                 for docSnapshot in docs {
                     let data = docSnapshot.data()
@@ -108,7 +113,7 @@ class ShoppingViewController: UIViewController {
     
     // Delete a Todo and fetch data afterwards
     func deleteItem(id: String, indexPath: IndexPath) {
-        let ref = db.collection("shoppinglist").document("idx").collection("items").document(id)
+        let ref = db.collection("shoppinglist").document(userObject.wgid).collection("items").document(id)
         ref.delete() { err in
             if let err = err {
                 print("Unable to delete document, reason: \(err)")
@@ -128,7 +133,7 @@ extension ShoppingViewController: ShoppingCellDelegate {
     // is passed.
     // The Todo is updated in firestore with the done variable. Then fetchData is called
     func checkEntry(index: IndexPath, id: String, bought: Bool) {
-        let ref = db.collection("shoppinglist").document("idx").collection("items").document(id)
+        let ref = db.collection("shoppinglist").document(userObject.wgid).collection("items").document(id)
         ref.updateData([
                 "bought": bought
             ]) { err in

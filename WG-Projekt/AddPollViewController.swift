@@ -9,6 +9,7 @@
 import UIKit
 
 class AddPollViewController: UIViewController {
+    var userObject = Singelton.sharedInstance.fetchdata()
     var optionCounter = 2 //counter starts with 2
     var newPoll: Poll!  // newPoll that is accassable in the CalendarVC
 
@@ -51,7 +52,10 @@ class AddPollViewController: UIViewController {
             return
         }
         //Create a map for the users where the default value is -1, create Poll and store it in the class variable, perform segue
-        let userMap : [String: Int] = ["Emil" : -11, "Hanna": -1, "Paul":-1, "Jerome":-1]
+        var userMap : [String: Int] = [:]
+        for u in userObject.members {
+            userMap[u] = -1
+        }
         newPoll = Poll(title: pollDescription.text!, user: userMap, options: optionsArray, till: pollDue.date, finished: false, id: "")
         performSegue(withIdentifier: "unwindFromPoll", sender: nil)
     }

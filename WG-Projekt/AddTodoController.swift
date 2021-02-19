@@ -15,6 +15,7 @@ struct User{
 }
 
 class AddTodoController: UIViewController{
+    var userObject = Singelton.sharedInstance.fetchdata()
     var newTodo: Todo!  // The new Todo Struct, accessable in TodoViewController
     private var users: [User] = []  // List of wg users
     private var activePerson = -1  // The currently chosen User
@@ -45,7 +46,7 @@ class AddTodoController: UIViewController{
     
     //The Users from the Wg are fetched from firestore and displayed as Collection View
     func fetchData() {
-        let collectionRef = db.collection("wgs").document("idx")
+        let collectionRef = db.collection("wgs").document(userObject.wgid)
         collectionRef.getDocument { (querySnapshot, err) in
             if let data = querySnapshot?.data() {
                 let usersEntry: [String] = data["users"] as! [String]
