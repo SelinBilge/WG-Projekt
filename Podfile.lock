@@ -331,6 +331,7 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - TagListView (1.4.1)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -338,6 +339,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - FSCalendar
+  - TagListView (~> 1.0)
 
 SPEC REPOS:
   trunk:
@@ -360,6 +362,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - TagListView
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -381,7 +384,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
 
-PODFILE CHECKSUM: ba352e67197010279d6bdec82cc1d180894036b6
+PODFILE CHECKSUM: 55553a8830c9a0fde333d31228372ea14580ed52
 
 COCOAPODS: 1.10.1

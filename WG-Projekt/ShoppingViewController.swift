@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import TagListView
 
 //Sections for Todo
 struct ShoppingSection{
@@ -27,15 +28,18 @@ class ShoppingViewController: UIViewController {
     var userObject = Singelton.sharedInstance.fetchdata()
     //Array that stores the todo sectios
     private var shoppingList: [ShoppingSection] = []
+    private var tags: [String] = []
     let db = Firestore.firestore()
 
     @IBOutlet weak var shoppingTable: UITableView!
     @IBOutlet weak var addField: UITextField!
+    @IBOutlet weak var tagList: TagListView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //set filed delegate
         addField.delegate = self
+        tagList.delegate = self
         //set navigation bar
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         guard
@@ -53,6 +57,8 @@ class ShoppingViewController: UIViewController {
             ShoppingSection(name: "Gekauft", entries: [])]
         fetchData()
         
+        setTags()
+        
         shoppingTable.delegate = self
         shoppingTable.dataSource = self
     }
@@ -66,6 +72,8 @@ class ShoppingViewController: UIViewController {
         if(addField.text == "") {
             return
         }
+        
+        saveTags(tag: addField.text!)
         
         let ref = db.collection("shoppinglist").document(userObject.wgid).collection("items")
         ref.addDocument(data: [
@@ -82,12 +90,47 @@ class ShoppingViewController: UIViewController {
         }
     }
     
+    func setTags() {
+        print("set tags")
+        tagList.removeAllTags()
+        let ref = db.collection("shoppinglist").document(userObject.wgid)
+        ref.getDocument { (snapshot, err) in
+            if let data = snapshot?.data() {
+                let getTags = data["tags"] as? [String]
+                if(getTags != nil) {
+                    self.tags = getTags!
+                    self.tagList.addTags(self.tags)
+                }
+            } else {
+                print("Couldn't find the document")
+            }
+        }
+        
+        //["Milch","Eier","Brot","Tomaten","Gebäck", "Gemüse", "Bananen", "Salami", "Salat", "Weintrauben", "Schinken", "Joguhrt", "Marmelade", "Hafermilch"]
+    }
+    
+    func saveTags(tag: String) {
+        if(tags.count >= 14) {
+            tags.remove(at: tags.count-1)
+        }
+        tags.insert(tag, at: 0)
+        
+        let ref = db.collection("shoppinglist").document(userObject.wgid)
+        ref.updateData([
+            "tags": tags
+            ]) { err in
+                if let err = err {
+                } else {
+                    self.setTags()
+                }
+            }
+    }
+    
     //Fetches data from firestore. Clears the entries of the 2 Sections.
     func fetchData() {
         shoppingList[0].entries = []
         shoppingList[1].entries = []
         
-        print(userObject.wgid)
         let collectionRef = db.collection("shoppinglist").document(userObject.wgid).collection("items")
         collectionRef.getDocuments { (querySnapshot, err) in
             if let error = err {
@@ -294,4 +337,12 @@ extension ShoppingViewController : UITextFieldDelegate {
 
 extension ShoppingViewController : UITableViewDelegate {
     
+}
+
+
+
+extension ShoppingViewController : TagListViewDelegate {
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        addField.text = title
+    }
 }
